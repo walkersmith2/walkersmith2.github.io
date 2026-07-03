@@ -5,7 +5,15 @@
     --accent-color: #00C8B3;
 }
 
+.dark-mode {
+    --header-text-color: #ffffff;
+    --body-text-color: #afafaf;
+    --background-color:  #020202;
+    --accent-color: #00C8B3;
+}
+
 html {
+    scroll-padding-top: 175px;
     scroll-behavior: smooth;
 }
 
@@ -16,6 +24,10 @@ html {
     font-family: Inter, Arial, sans-serif;
     color: var(--body-text-color, gray);
     background-color: var(--background-color, white);
+}
+
+* {
+    transition: color 1s ease, background-color 1s ease;
 }
 
 h1, h2, h3, h4, h5, h6, a, figcaption, label {
@@ -30,7 +42,7 @@ h1, h2, h3, h4, h5, h6, a, figcaption, label {
 
 #header-subtitle {
     font-size: 1.2rem;
-    color: var(--accent-color);
+    color: var(--accent-color, green);
 }
 
 header {
@@ -59,23 +71,24 @@ header {
     padding: 1rem;
 }
 
-#nav-bar a:not(#contact-nav-link) {
+a:not(#contact-nav-link) {
     text-decoration: underline;
     text-decoration-color: transparent;
-    transition: text-decoration 0.3s;
+    background-color: transparent;
+    transition: text-decoration 0.3s, color 1s ease;
 }
 
-#nav-bar a:not(#contact-nav-link):hover {
+a:not(#contact-nav-link):hover {
     text-decoration: underline;
 }
 
 #contact-nav-link {
     text-decoration: none;
     font-weight: bold;
-    background-color: var(--text-color, black);
+    background-color: var(--header-text-color, black);
     color: var(--background-color, white);
     border-radius: 0.5em;
-    transition: color 0.3s;
+    transition: color 0.3s ease, background-color 1s ease;
 }
 
 #contact-nav-link:hover {
@@ -106,7 +119,7 @@ main {
     height: 7rem;
 }
 
-#hero-banner-image {
+.hero-banner-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -139,7 +152,6 @@ article {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 3rem;
-    
     margin: 1rem 0;
 }
 

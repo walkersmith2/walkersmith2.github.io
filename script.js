@@ -9,9 +9,9 @@ darkModeSwitch.addEventListener("click", () => {
     const heroBannerImageSrcDark = "./assets/images/hero-banner-image-dark-mode.jpg";
     const heroBannerImages = document.querySelectorAll(".hero-banner-image");
     if(root.classList.contains("dark-mode")) {
-        heroBannerImages.forEach((elem) => elem.src = heroBannerImageSrcLight);
+        heroBannerImages.forEach((elem) => elem.src = heroBannerImageSrcDark);
         return;
     }
-    heroBannerImages.forEach((elem) => elem.src = heroBannerImageSrcDark);
+    heroBannerImages.forEach((elem) => elem.src = heroBannerImageSrcLight);
 
 });
