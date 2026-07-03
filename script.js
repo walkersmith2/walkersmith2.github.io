@@ -5,13 +5,11 @@ darkModeSwitch.addEventListener("click", () => {
     root.classList.toggle("dark-mode");
     
     // Change hero banners
-    const heroBannerImageSrcLight = "./assets/images/hero-banner-image.jpg";
-    const heroBannerImageSrcDark = "./assets/images/hero-banner-image-dark-mode.jpg";
-    const heroBannerImages = document.querySelectorAll(".hero-banner-image");
+    const heroBannerImagesDark = document.querySelectorAll(".hero-banner-image-dark-mode");
     if(root.classList.contains("dark-mode")) {
-        heroBannerImages.forEach((elem) => elem.src = heroBannerImageSrcDark);
+        heroBannerImagesDark.forEach(img => img.style.opacity = 1);
         return;
     }
-    heroBannerImages.forEach((elem) => elem.src = heroBannerImageSrcLight);
+    heroBannerImagesDark.forEach(img => img.style.opacity = 0);
 
 });
