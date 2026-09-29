@@ -1,15 +1,19 @@
 :root {
+    color-scheme: light dark;
     --header-text-color: #020202;
     --body-text-color: #636363;
     --background-color: #ffffff;
     --accent-color: #00C8B3;
+    --border:  #d1d1d1;
 }
 
-.dark-mode {
-    --header-text-color: #ffffff;
-    --body-text-color: #afafaf;
-    --background-color:  #020202;
-    --accent-color: #00C8B3;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --header-text-color: #ffffff;
+        --body-text-color: #afafaf;
+        --background-color:  #212023;
+        --accent-color: #00C8B3;
+    }
 }
 
 html {
@@ -27,7 +31,7 @@ html {
 }
 
 * {
-    transition: color 1s ease, background-color 1s ease;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6, a, figcaption, label {
@@ -96,17 +100,6 @@ a:not(#contact-nav-link):hover {
     color: var(--accent-color, green);
 }
 
-#dark-mode-div {
-    font-weight: bold;
-    justify-self: end;
-    align-self: center;
-    padding: 1rem;
-}
-
-#dark-mode-switch {
-    margin: 0.5rem;
-}
-
 main {
     display: grid;
     grid-template-areas: 
@@ -136,6 +129,9 @@ main {
 }
 
 section {
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
     margin: 1rem auto;
     width: 80%;
     max-width: 800px;
@@ -186,9 +182,9 @@ article {
     margin: 0.5rem 0;
 }
 
-#contact-form {
-    display: flex;
-    flex-direction: column;
+
+#contact * {
+    margin-top: 0.5rem;
 }
 
 footer {
@@ -218,4 +214,8 @@ footer i {
 .bi-box-arrow-up-right {
     color: black;
     font-weight: 500;
+}
+
+#pocketflow-header a span {
+    margin-right: 0.5rem;
 }
